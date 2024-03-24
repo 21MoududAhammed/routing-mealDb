@@ -1,8 +1,8 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 export default function Home() {
   const meals = useLoaderData();
-  console.log(meals);
+  // console.log(meals);
   return (
     <div className="m-5 grid grid-cols-3 gap-5">
       {meals.map((meal) => {
@@ -21,7 +21,7 @@ export default function Home() {
             <div className="card-body">
               <h2 className="card-title">{meal.strMeal}</h2>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Show Details</button>
+                <Link to={`/${meal.idMeal}`}><button className="btn btn-primary">Show Details</button></Link>
               </div>
             </div>
           </div>
